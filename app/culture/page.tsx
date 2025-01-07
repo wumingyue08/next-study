@@ -4,11 +4,13 @@
  * @Desc: 
  */
 import React from 'react';
-
-export default function Product() {
+import Hero from '../components/hero';
+import { Metadata } from '@/node_modules/next/types';
+export const metadata: Metadata = {
+  title: 'Culture'
+}
+export default function Culture() {
   return (
-    <div>
-      Hello Word
-    </div>
+    <Hero color='#987165' altTxt='home' content='culture' />
   )
 }
