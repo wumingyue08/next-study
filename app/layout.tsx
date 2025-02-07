@@ -8,6 +8,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import Header from "./components/header";
 import "./globals.css";
+import Link from "@/node_modules/next/link";
 
 
 const geistSans = Geist({
@@ -27,8 +28,12 @@ export const metadata: Metadata = {
 
 export default function DashboardLayout({
   children,
+  team,
+  analytics
 }: Readonly<{
   children: React.ReactNode;
+  team: React.ReactNode;
+  analytics: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -38,7 +43,18 @@ export default function DashboardLayout({
         <Header />
         <AntdRegistry>
 
-          {children}
+
+          <div>
+            <div>
+              <Link href='/'>Home</Link>
+              <Link href='/visitors'>Visitors</Link>
+            </div>
+            <div>
+              {team}
+              {analytics}
+            </div>
+            {children}
+          </div>
         </AntdRegistry>
 
       </body>
